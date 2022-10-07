@@ -287,7 +287,7 @@ class FeaturesManager:
         "donut-swin": supported_features_mapping(
             "default",
             "document-question-answering",
-            "image-classification", 
+            "image-classification",
             onnx_config_cls="models.donut.DonutSwinOnnxConfig",
         ),
         "electra": supported_features_mapping(

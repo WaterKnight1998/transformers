@@ -47,7 +47,11 @@ else:
 
 
 if TYPE_CHECKING:
-    from .configuration_donut_swin import DONUT_SWIN_PRETRAINED_CONFIG_ARCHIVE_MAP, DonutSwinConfig, DonutSwinOnnxConfig
+    from .configuration_donut_swin import (
+        DONUT_SWIN_PRETRAINED_CONFIG_ARCHIVE_MAP,
+        DonutSwinConfig,
+        DonutSwinOnnxConfig,
+    )
     from .processing_donut import DonutProcessor
 
     try:
