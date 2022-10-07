@@ -280,6 +280,11 @@ class FeaturesManager:
             "question-answering",
             onnx_config_cls="models.distilbert.DistilBertOnnxConfig",
         ),
+        "donut-swin": supported_features_mapping(
+            "default",
+            "image-classification", 
+            onnx_config_cls="models.donut.DonutSwinOnnxConfig",
+        ),
         "electra": supported_features_mapping(
             "default",
             "masked-lm",

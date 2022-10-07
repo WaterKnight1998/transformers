@@ -13,6 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """ Donut Swin Transformer model configuration"""
+from collections import OrderedDict
+from typing import Mapping
+
+from transformers.onnx import OnnxConfig
 
 from ...configuration_utils import PretrainedConfig
 from ...utils import logging
@@ -138,3 +142,12 @@ class DonutSwinConfig(PretrainedConfig):
         # we set the hidden_size attribute in order to make Swin work with VisionEncoderDecoderModel
         # this indicates the channel dimension after the last stage of the model
         self.hidden_size = int(embed_dim * 2 ** (len(depths) - 1))
+
+class DonutSwinOnnxConfig(OnnxConfig):
+    @property
+    def inputs(self) -> Mapping[str, Mapping[int, str]]:
+        return OrderedDict(
+            [
+                ("pixel_values", {0: "batch", 1: "num_channels", 2: "height", 3: "width"}),
+            ]
+        )
