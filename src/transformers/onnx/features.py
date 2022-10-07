@@ -19,6 +19,7 @@ if is_torch_available():
     from transformers.models.auto import (
         AutoModel,
         AutoModelForCausalLM,
+        AutoModelForDocumentQuestionAnswering,
         AutoModelForImageClassification,
         AutoModelForImageSegmentation,
         AutoModelForMaskedImageModeling,
@@ -35,6 +36,7 @@ if is_tf_available():
     from transformers.models.auto import (
         TFAutoModel,
         TFAutoModelForCausalLM,
+        TFAutoModelForDocumentQuestionAnswering,
         TFAutoModelForMaskedLM,
         TFAutoModelForMultipleChoice,
         TFAutoModelForQuestionAnswering,
@@ -93,6 +95,7 @@ class FeaturesManager:
             "token-classification": AutoModelForTokenClassification,
             "multiple-choice": AutoModelForMultipleChoice,
             "object-detection": AutoModelForObjectDetection,
+            "document-question-answering": AutoModelForDocumentQuestionAnswering,
             "question-answering": AutoModelForQuestionAnswering,
             "image-classification": AutoModelForImageClassification,
             "image-segmentation": AutoModelForImageSegmentation,
@@ -108,6 +111,7 @@ class FeaturesManager:
             "sequence-classification": TFAutoModelForSequenceClassification,
             "token-classification": TFAutoModelForTokenClassification,
             "multiple-choice": TFAutoModelForMultipleChoice,
+            "document-question-answering": TFAutoModelForDocumentQuestionAnswering,
             "question-answering": TFAutoModelForQuestionAnswering,
             "semantic-segmentation": TFAutoModelForSemanticSegmentation,
         }
@@ -282,6 +286,7 @@ class FeaturesManager:
         ),
         "donut-swin": supported_features_mapping(
             "default",
+            "document-question-answering",
             "image-classification", 
             onnx_config_cls="models.donut.DonutSwinOnnxConfig",
         ),
