@@ -14,7 +14,7 @@
 # limitations under the License.
 """ Donut Swin Transformer model configuration"""
 from collections import OrderedDict
-from typing import TYPE_CHECKING, Any, Mapping, Optional
+from typing import Any, Mapping, Optional, TYPE_CHECKING
 
 
 from ...configuration_utils import PretrainedConfig
