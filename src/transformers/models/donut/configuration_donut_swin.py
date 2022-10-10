@@ -14,13 +14,13 @@
 # limitations under the License.
 """ Donut Swin Transformer model configuration"""
 from collections import OrderedDict
-from typing import Any, Mapping, Optional, TYPE_CHECKING
-
+from typing import TYPE_CHECKING, Any, Mapping, Optional
 
 from ...configuration_utils import PretrainedConfig
 from ...onnx import OnnxConfig
 from ...onnx.utils import compute_effective_axis_dimension
 from ...utils import logging
+
 
 if TYPE_CHECKING:
     from ...feature_extraction_utils import FeatureExtractionMixin
